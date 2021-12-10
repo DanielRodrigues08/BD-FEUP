@@ -1,23 +1,6 @@
 PRAGMA FOREIGN_KEYS=ON;
 
 DROP TABLE IF EXISTS Component;
-DROP TABLE IF EXISTS Supplier;
-DROP TABLE IF EXISTS ComponentSupplier;
-DROP TABLE IF EXISTS ComponentChassisSupplier;
-DROP TABLE IF EXISTS ComponentTireSupplier;
-DROP TABLE IF EXISTS ComponentEngineSupplier;
-DROP TABLE IF EXISTS ComponentBrakeSupplier;
-DROP TABLE IF EXISTS ComponentSuspensionSupplier;
-DROP TABLE IF EXISTS ComponentWingSupplier;
-DROP TABLE IF EXISTS ComponentTransmissionSupplier;
-DROP TABLE IF EXISTS ComponentChassis;
-DROP TABLE IF EXISTS ComponentTire;
-DROP TABLE IF EXISTS ComponentEngine;
-DROP TABLE IF EXISTS ComponentBrake;
-DROP TABLE IF EXISTS ComponentSuspension;
-DROP TABLE IF EXISTS ComponentWing;
-DROP TABLE IF EXISTS ComponentTransmission;
-
 CREATE TABLE Component(
     idComponent INTEGER,
     assemblyDate DATE NOT NULL,
@@ -27,6 +10,7 @@ CREATE TABLE Component(
 
 );
 
+DROP TABLE IF EXISTS Supplier;
 CREATE TABLE Supplier(
     idSupplier INTEGER,
     name TEXT NOT NULL UNIQUE,
@@ -37,14 +21,16 @@ CREATE TABLE Supplier(
     CONSTRAINT POSITIVE_PAYMENT CHECK ( payment>0 )
 );
 
+DROP TABLE IF EXISTS ComponentSupplier;
 CREATE TABLE ComponentSupplier(
     idComponent INTEGER,
     idSupplier INTEGER,
     CONSTRAINT ComponentSupplier_PK PRIMARY KEY (idComponent, idSupplier),
-    CONSTRAINT Component_FK FOREIGN KEY (idComponent) REFERENCES Component(idComponent),
-    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier)
+    CONSTRAINT Component_FK FOREIGN KEY (idComponent) REFERENCES Component(idComponent) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
+DROP TABLE IF EXISTS ComponentChassis;
 CREATE TABLE ComponentChassis(
     idComponent INTEGER,
     assemblyDate DATE NOT NULL,
@@ -55,14 +41,16 @@ CREATE TABLE ComponentChassis(
     CONSTRAINT RIGIDITY_LIMITS CHECK ( rigidity>= 0 AND rigidity<=100)
 );
 
+DROP TABLE IF EXISTS ComponentChassisSupplier;
 CREATE TABLE ComponentChassisSupplier(
     idComponent INTEGER,
     idSupplier INTEGER,
     CONSTRAINT ComponentSupplier_PK PRIMARY KEY (idComponent, idSupplier),
     CONSTRAINT Component_FK FOREIGN KEY (idComponent) REFERENCES ComponentChassis(idComponent) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier) ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
+DROP TABLE IF EXISTS ComponentTire;
 CREATE TABLE ComponentTire(
     idComponent INTEGER,
     assemblyDate DATE NOT NULL,
@@ -73,14 +61,16 @@ CREATE TABLE ComponentTire(
     CONSTRAINT HARDNESS_LIMITS CHECK ( hardness>= 1 AND hardness<=8)
 );
 
+DROP TABLE IF EXISTS ComponentTireSupplier;
 CREATE TABLE ComponentTireSupplier(
     idComponent INTEGER,
     idSupplier INTEGER,
     CONSTRAINT ComponentSupplier_PK PRIMARY KEY (idComponent, idSupplier),
     CONSTRAINT Component_FK FOREIGN KEY (idComponent) REFERENCES ComponentTire(idComponent)ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier) ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
+DROP TABLE IF EXISTS ComponentEngine;
 CREATE TABLE ComponentEngine(
     idComponent INTEGER,
     assemblyDate DATE NOT NULL,
@@ -91,14 +81,16 @@ CREATE TABLE ComponentEngine(
     CONSTRAINT CAPACITY_LIMITS CHECK ( capacity > 0.0 AND capacity <= 1600.0 )
 );
 
+DROP TABLE IF EXISTS ComponentEngineSupplier;
 CREATE TABLE ComponentEngineSupplier(
     idComponent INTEGER,
     idSupplier INTEGER,
     CONSTRAINT ComponentSupplier_PK PRIMARY KEY (idComponent, idSupplier),
     CONSTRAINT Component_FK FOREIGN KEY (idComponent) REFERENCES Component(idComponent) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier) ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
+DROP TABLE IF EXISTS ComponentBrake;
 CREATE TABLE ComponentBrake(
     idComponent INTEGER,
     assemblyDate DATE NOT NULL,
@@ -115,14 +107,16 @@ CREATE TABLE ComponentBrake(
     CONSTRAINT PISTON_POSITIVE CHECK ( piston>0 )
 );
 
+DROP TABLE IF EXISTS ComponentBrakeSupplier;
 CREATE TABLE ComponentBrakeSupplier(
     idComponent INTEGER,
     idSupplier INTEGER,
     CONSTRAINT ComponentSupplier_PK PRIMARY KEY (idComponent, idSupplier),
     CONSTRAINT Component_FK FOREIGN KEY (idComponent) REFERENCES ComponentBrake(idComponent)ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier)ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier)ON DELETE SET NULL ON UPDATE CASCADE
 );
 
+DROP TABLE IF EXISTS ComponentSuspension;
 CREATE TABLE ComponentSuspension(
     idComponent INTEGER,
     assemblyDate DATE NOT NULL,
@@ -137,14 +131,16 @@ CREATE TABLE ComponentSuspension(
     CONSTRAINT HEIGHT_LIMITS CHECK ( height>=0 AND height<=1.1 )
 );
 
+DROP TABLE IF EXISTS ComponentSuspensionSupplier;
 CREATE TABLE ComponentSuspensionSupplier(
     idComponent INTEGER,
     idSupplier INTEGER,
     CONSTRAINT ComponentSupplier_PK PRIMARY KEY (idComponent, idSupplier),
     CONSTRAINT Component_FK FOREIGN KEY (idComponent) REFERENCES ComponentSuspension(idComponent)ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier)ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier)ON DELETE SET NULL ON UPDATE CASCADE
 );
 
+DROP TABLE IF EXISTS ComponentWing;
 CREATE TABLE ComponentWing(
     idComponent INTEGER,
     assemblyDate DATE NOT NULL,
@@ -155,14 +151,16 @@ CREATE TABLE ComponentWing(
     CONSTRAINT DEGREES_LIMITS CHECK ( degrees>= 5 AND degrees<=15 )
 );
 
+DROP TABLE IF EXISTS ComponentWingSupplier;
 CREATE TABLE ComponentWingSupplier(
     idComponent INTEGER,
     idSupplier INTEGER,
     CONSTRAINT ComponentSupplier_PK PRIMARY KEY (idComponent, idSupplier),
     CONSTRAINT Component_FK FOREIGN KEY (idComponent) REFERENCES ComponentWing(idComponent)ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier)ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier)ON DELETE SET NULL ON UPDATE CASCADE
 );
 
+DROP TABLE IF EXISTS ComponentTransmission;
 CREATE TABLE ComponentTransmission(
     idComponent INTEGER,
     assemblyDate DATE NOT NULL,
@@ -175,10 +173,11 @@ CREATE TABLE ComponentTransmission(
     CONSTRAINT RATIO_LIMITS CHECK ( ratio>=50 AND ratio<=100 )
 );
 
+DROP TABLE IF EXISTS ComponentTransmissionSupplier;
 CREATE TABLE ComponentTransmissionSupplier(
     idComponent INTEGER,
     idSupplier INTEGER,
     CONSTRAINT ComponentSupplier_PK PRIMARY KEY (idComponent, idSupplier),
     CONSTRAINT Component_FK FOREIGN KEY (idComponent) REFERENCES ComponentTransmission(idComponent)ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier)ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier)ON DELETE SET NULL ON UPDATE CASCADE
 );
