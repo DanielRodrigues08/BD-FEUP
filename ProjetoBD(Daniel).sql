@@ -10,6 +10,15 @@ CREATE TABLE Component(
 
 );
 
+DROP TABLE IF EXISTS ComponentPiece;
+CREATE TABLE ComponentPiece(
+    idComponent INTEGER,
+    idPiece INTEGER,
+    CONSTRAINT ComponentPiece_PK PRIMARY KEY(idComponent, idPiece),
+    CONSTRAINT Component_FK FOREIGN KEY (idComponent) REFERENCES Component(idComponent) ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT Piece_FK FOREIGN KEY (idPiece) REFERENCES Piece(idPiece) ON DELETE SET NULL ON UPDATE CASCADE
+)
+
 DROP TABLE IF EXISTS Supplier;
 CREATE TABLE Supplier(
     idSupplier INTEGER,
