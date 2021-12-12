@@ -9,7 +9,7 @@ CREATE TABLE Component(
     CONSTRAINT Component_PK PRIMARY KEY (idComponent)
 
 );
-
+/*
 DROP TABLE IF EXISTS ComponentPiece;
 CREATE TABLE ComponentPiece(
     idComponent INTEGER,
@@ -17,26 +17,27 @@ CREATE TABLE ComponentPiece(
     CONSTRAINT ComponentPiece_PK PRIMARY KEY(idComponent, idPiece),
     CONSTRAINT Component_FK FOREIGN KEY (idComponent) REFERENCES Component(idComponent) ON DELETE SET NULL ON UPDATE CASCADE,
     CONSTRAINT Piece_FK FOREIGN KEY (idPiece) REFERENCES Piece(idPiece) ON DELETE SET NULL ON UPDATE CASCADE
-)
+)*/
 
 DROP TABLE IF EXISTS Supplier;
 CREATE TABLE Supplier(
     idSupplier INTEGER,
     name TEXT NOT NULL UNIQUE,
-    duration INTEGER NOT NULL ,
-    payment INTEGER NOT NULL,
-    CONSTRAINT Supplier_PK PRIMARY KEY (idSupplier),
-    CONSTRAINT POSITIVE_DURATION CHECK ( duration > 0 ),
-    CONSTRAINT POSITIVE_PAYMENT CHECK ( payment>0 )
+    CONSTRAINT Supplier_PK PRIMARY KEY (idSupplier)
+
 );
 
-DROP TABLE IF EXISTS ComponentSupplier;
-CREATE TABLE ComponentSupplier(
+DROP TABLE IF EXISTS Info;
+CREATE TABLE Info(
     idComponent INTEGER,
     idSupplier INTEGER,
-    CONSTRAINT ComponentSupplier_PK PRIMARY KEY (idComponent, idSupplier),
+    duration INTEGER NOT NULL ,
+    payment INTEGER NOT NULL,
+    CONSTRAINT ComponentSupplier_PK PRIMARY KEY (idComponent),
     CONSTRAINT Component_FK FOREIGN KEY (idComponent) REFERENCES Component(idComponent) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier) ON DELETE SET NULL ON UPDATE CASCADE
+    CONSTRAINT Supplier_FK FOREIGN KEY (idSupplier) REFERENCES Supplier(idSupplier) ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT POSITIVE_DURATION CHECK ( duration > 0 ),
+    CONSTRAINT POSITIVE_PAYMENT CHECK ( payment>0 )
 );
 
 DROP TABLE IF EXISTS Chassis;
@@ -98,7 +99,6 @@ DROP TABLE IF EXISTS Wing;
 CREATE TABLE Wing(
     idComponent INTEGER,
     degrees REAL NOT NULL,
-    chassisNumber INTEGER,
     CONSTRAINT Wing_PK PRIMARY KEY (idComponent),
     CONSTRAINT Wing_FK FOREIGN KEY (idComponent) REFERENCES Component(idComponent) ON DELETE CASCADE ON UPDATE RESTRICT,
     CONSTRAINT DEGREES_LIMITS CHECK ( degrees>= 5 AND degrees<=15 )
@@ -114,3 +114,10 @@ CREATE TABLE Transmission(
     CONSTRAINT DIFFERENTIAL_LIMITS CHECK ( differential>=50 AND differential<=100 ),
     CONSTRAINT RATIO_LIMITS CHECK ( ratio>=50 AND ratio<=100 )
 );
+
+DROP TABLE IF EXISTS Car;
+CREATE TABLE Car(
+    idCar INTEGER PRIMARY KEY ,
+    cost FLOAT
+);
+
