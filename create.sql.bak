@@ -1,42 +1,6 @@
 PRAGMA FOREIGN_KEYS=ON;
+
 DROP TABLE IF EXISTS Department;
-DROP TABLE IF EXISTS Boss;
-DROP TABLE IF EXISTS Staff;
-DROP TABLE IF EXISTS StaffTeam;
-DROP TABLE IF EXISTS Gender;
-DROP TABLE IF EXISTS GenderStaff;
-DROP TABLE IF EXISTS Team;
-DROP TABLE IF EXISTS Country;
-DROP TABLE IF EXISTS TeamCountry;
-DROP TABLE IF EXISTS TeamFinancing;
-DROP TABLE IF EXISTS Financing;
-DROP TABLE IF EXISTS FinancingInvestor;
-DROP TABLE IF EXISTS FinancingSponsor;
-DROP TABLE IF EXISTS Infrastructure;
-DROP TABLE IF EXISTS InfrastructureDepartmentStaff;
-DROP TABLE IF EXISTS Machine;
-DROP TABLE IF EXISTS StaffMachine;
-DROP TABLE IF EXISTS Piece;
-DROP Table IF EXISTS MachinePiece;
-DROP TABLE IF EXISTS Pilot;
-DROP TABLE IF EXISTS Car;
-DROP TABLE IF EXISTS Circuit;
-DROP TABLE IF EXISTS Setup;
-DROP TABLE IF EXISTS CarCircuitSetup;
-DROP TABLE IF EXISTS Component;
-DROP TABLE IF EXISTS Supplier;
-DROP TABLE IF EXISTS ComponentPiece;
-DROP TABLE IF EXISTS Info;
-DROP TABLE IF EXISTS Chassis;
-DROP TABLE IF EXISTS Tire;
-DROP TABLE IF EXISTS Engine;
-DROP TABLE IF EXISTS Brake;
-DROP TABLE IF EXISTS Suspension;
-DROP TABLE IF EXISTS Wing;
-DROP TABLE IF EXISTS Transmission;
-
-
-
 CREATE TABLE Department
 (
     idDepartment INTEGER,
@@ -47,12 +11,14 @@ CREATE TABLE Department
     CONSTRAINT POSITIVE_BUDGET CHECK ( budget > 0)
 );
 
+DROP TABLE IF EXISTS Boss;
 CREATE TABLE Boss(
     idBoss INTEGER,
     isBoss BOOLEAN NOT NULL,
     CONSTRAINT Boss_PK PRIMARY KEY (idBoss)
 );
 
+DROP TABLE IF EXISTS Staff;
 CREATE TABLE Staff
 (
     idStaff   INTEGER,
@@ -66,6 +32,7 @@ CREATE TABLE Staff
     CONSTRAINT POSITIVE_SALARY CHECK ( salary > 0)
 );
 
+DROP TABLE IF EXISTS StaffTeam;
 CREATE TABLE StaffTeam
 (
     idStaff INTEGER,
@@ -75,6 +42,7 @@ CREATE TABLE StaffTeam
     CONSTRAINT StaffTeam_PK PRIMARY KEY (idTeam, idStaff)
 );
 
+DROP TABLE IF EXISTS Gender;
 CREATE TABLE Gender
 (
     idGender    INTEGER,
@@ -82,6 +50,7 @@ CREATE TABLE Gender
     CONSTRAINT Gender_PK PRIMARY KEY (idGender)
 );
 
+DROP TABLE IF EXISTS GenderStaff;
 CREATE TABLE GenderStaff
 (
     idStaff INTEGER,
@@ -91,6 +60,7 @@ CREATE TABLE GenderStaff
     CONSTRAINT GenderTeam_PK PRIMARY KEY (idGender, idStaff)
 );
 
+DROP TABLE IF EXISTS Team;
 CREATE TABLE Team
 (
     idTeam         INTEGER,
@@ -99,6 +69,7 @@ CREATE TABLE Team
     CONSTRAINT Team_PK PRIMARY KEY (idTeam)
 );
 
+DROP TABLE IF EXISTS Country;
 CREATE TABLE Country
 (
     idCountry INTEGER,
@@ -106,6 +77,7 @@ CREATE TABLE Country
     CONSTRAINT Country_PK PRIMARY KEY (idCountry)
 );
 
+DROP TABLE IF EXISTS TeamCountry;
 CREATE TABLE TeamCountry
 (
     idCountry INTEGER,
@@ -115,6 +87,7 @@ CREATE TABLE TeamCountry
     CONSTRAINT TeamCountry_PK PRIMARY KEY (idTeam, idCountry)
 );
 
+DROP TABLE IF EXISTS TeamFinancing;
 CREATE TABLE TeamFinancing
 (
     idTeam INTEGER,
@@ -124,6 +97,7 @@ CREATE TABLE TeamFinancing
     CONSTRAINT TeamFinancing_PK PRIMARY KEY (idTeam, idFinancing)
 );
 
+DROP TABLE IF EXISTS Financing;
 CREATE TABLE Financing
 (
     idFinancing     INTEGER,
@@ -132,6 +106,7 @@ CREATE TABLE Financing
     CONSTRAINT POSITIVE_INVESTEDCAPITAL CHECK ( investedCapital > 0)
 );
 
+DROP TABLE IF EXISTS FinancingInvestor;
 CREATE TABLE FinancingInvestor
 (
     idFinancing     INTEGER,
@@ -141,6 +116,7 @@ CREATE TABLE FinancingInvestor
     CONSTRAINT FinancingInvestor_FK FOREIGN KEY (idFinancing) REFERENCES Financing(idFinancing) ON DELETE CASCADE ON UPDATE CASCADE ,
     CONSTRAINT POSITIVE_INVESTEDCAPITAL CHECK ( investedCapital > 0)
 );
+DROP TABLE IF EXISTS FinancingSponsor;
 CREATE TABLE FinancingSponsor
 (
     idFinancing     INTEGER,
@@ -154,6 +130,7 @@ CREATE TABLE FinancingSponsor
 
 
 -- Table: Infrastructure
+DROP TABLE IF EXISTS Infrastructure;
 CREATE TABLE Infrastructure (
     idInfrastructure    INTEGER,
     address             TEXT    CONSTRAINT nn_infrastructure_address NOT NULL,
@@ -163,6 +140,7 @@ CREATE TABLE Infrastructure (
     CONSTRAINT Infrastructure_PK PRIMARY KEY (idInfrastructure)
 );
 
+DROP TABLE IF EXISTS InfrastructureDepartmentStaff;
 CREATE TABLE InfrastructureDepartmentStaff
 (
     idInfrastructure INTEGER REFERENCES Infrastructure,
@@ -171,6 +149,7 @@ CREATE TABLE InfrastructureDepartmentStaff
 );
 
 -- Table: Machine
+DROP TABLE IF EXISTS Machine;
 
 CREATE TABLE Machine(
     idMachine               INTEGER,
@@ -184,6 +163,7 @@ CREATE TABLE Machine(
     CONSTRAINT Machine_PK PRIMARY KEY (idMachine)
 );
 
+DROP TABLE IF EXISTS StaffMachine;
 
 CREATE TABLE StaffMachine(
 	idMachine 			    INTEGER,
@@ -194,6 +174,7 @@ CREATE TABLE StaffMachine(
 );
 
 -- Table: Piece
+DROP TABLE IF EXISTS Piece;
 
 CREATE TABLE Piece(
     idPiece                 INTEGER,
@@ -208,6 +189,7 @@ CREATE TABLE Piece(
     CONSTRAINT Piece_PK PRIMARY KEY (idPiece)
 );
 
+DROP Table IF EXISTS MachinePiece;
 
 CREATE TABLE MachinePiece(
 	idMachine				INTEGER,
@@ -221,6 +203,7 @@ CREATE TABLE MachinePiece(
 
 
 -- Table: Pilot
+DROP TABLE IF EXISTS Pilot;
 
 CREATE TABLE Pilot(
     idStaff     INTEGER  ,
@@ -235,6 +218,7 @@ CREATE TABLE Pilot(
 
 
 -- Table: Car
+DROP TABLE IF EXISTS Car;
 
 CREATE TABLE Car(
     idCar       INTEGER PRIMARY KEY,
@@ -246,6 +230,7 @@ CREATE TABLE Car(
 
 
 -- Table: Circuit
+DROP TABLE IF EXISTS Circuit;
 
 CREATE TABLE Circuit(
     idCircuit   INTEGER PRIMARY KEY,
@@ -256,6 +241,7 @@ CREATE TABLE Circuit(
 );
 
 -- Table: Setup
+DROP TABLE IF EXISTS Setup;
 
 CREATE TABLE Setup(
     idSetup         INTEGER PRIMARY KEY,
@@ -273,6 +259,7 @@ CREATE TABLE Setup(
 );
 
 -- Table: CarCircuitSetup
+DROP TABLE IF EXISTS CarCircuitSetup;
 
 CREATE TABLE CarCircuitSetup(
     idCar       INTEGER REFERENCES Car(idCar) ON UPDATE CASCADE ON DELETE CASCADE ,
@@ -280,6 +267,7 @@ CREATE TABLE CarCircuitSetup(
     idCircuit   INTEGER REFERENCES Circuit(idCircuit)ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+DROP TABLE IF EXISTS Component;
 CREATE TABLE Component(
     idComponent INTEGER,
     assemblyDate DATE NOT NULL,
@@ -290,6 +278,7 @@ CREATE TABLE Component(
 );
 
 
+DROP TABLE IF EXISTS Supplier;
 CREATE TABLE Supplier(
     idSupplier INTEGER,
     name TEXT NOT NULL UNIQUE,
@@ -297,6 +286,7 @@ CREATE TABLE Supplier(
 
 );
 
+DROP TABLE IF EXISTS Info;
 CREATE TABLE Info(
     idComponent INTEGER,
     idSupplier INTEGER,
@@ -309,6 +299,7 @@ CREATE TABLE Info(
     CONSTRAINT POSITIVE_PAYMENT CHECK ( payment>0 )
 );
 
+DROP TABLE IF EXISTS Chassis;
 CREATE TABLE Chassis(
     idComponent INTEGER,
     rigidity INTEGER NOT NULL,
@@ -317,6 +308,7 @@ CREATE TABLE Chassis(
     CONSTRAINT RIGIDITY_LIMITS CHECK ( rigidity>= 0 AND rigidity<=100)
 );
 
+DROP TABLE IF EXISTS Tire;
 CREATE TABLE Tire(
     idComponent INTEGER,
     hardness INTEGER NOT NULL,
@@ -327,6 +319,7 @@ CREATE TABLE Tire(
     CONSTRAINT KMSCOVERED_LIMITS CHECK ( kmsCovered > 0)
 );
 
+DROP TABLE IF EXISTS Engine;
 CREATE TABLE Engine(
     idComponent INTEGER,
     capacity REAL NOT NULL,
@@ -335,6 +328,7 @@ CREATE TABLE Engine(
     CONSTRAINT CAPACITY_LIMITS CHECK ( capacity > 0.0 AND capacity <= 1600.0 )
 );
 
+DROP TABLE IF EXISTS Brake;
 CREATE TABLE Brake(
     idComponent INTEGER,
     maxTemp REAL NOT NULL,
@@ -347,6 +341,7 @@ CREATE TABLE Brake(
     CONSTRAINT SIZE_POSITIVE CHECK ( size > 0 )
 );
 
+DROP TABLE IF EXISTS Suspension;
 CREATE TABLE Suspension(
     idComponent INTEGER,
     rigidity INTEGER NOT NULL,
@@ -359,7 +354,7 @@ CREATE TABLE Suspension(
     CONSTRAINT HEIGHT_LIMITS CHECK ( height>=0 AND height<=1.1 )
 );
 
-
+DROP TABLE IF EXISTS Wing;
 CREATE TABLE Wing(
     idComponent INTEGER,
     degrees REAL NOT NULL,
@@ -368,6 +363,7 @@ CREATE TABLE Wing(
     CONSTRAINT DEGREES_LIMITS CHECK ( degrees>= 5 AND degrees<=15 )
 );
 
+DROP TABLE IF EXISTS Transmission;
 CREATE TABLE Transmission(
     idComponent INTEGER,
     differential REAL NOT NULL,
@@ -378,6 +374,7 @@ CREATE TABLE Transmission(
     CONSTRAINT RATIO_LIMITS CHECK ( ratio>=50 AND ratio<=100 )
 );
 
+DROP TABLE IF EXISTS ComponentPiece;
 CREATE TABLE ComponentPiece(
   idComponent INTEGER,
   idPiece INTEGER,

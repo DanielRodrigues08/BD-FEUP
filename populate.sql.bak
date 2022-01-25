@@ -186,7 +186,6 @@ INSERT INTO StaffMachine(idStaff, idMachine) VALUES (12, 11);
 INSERT INTO StaffMachine(idStaff, idMachine) VALUES (15, 6);
 INSERT INTO StaffMachine(idStaff, idMachine) VALUES (14, 10);
 INSERT INTO StaffMachine(idStaff, idMachine) VALUES (7, 5);
---Table: Piece
 
 
 --Table: Car
@@ -196,8 +195,7 @@ INSERT INTO Car(idCar,cost) VALUES (2,6500000);
 --Table: Pilot
 INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (13,70,170,1);
 INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (3,75,180,1);
-INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (5,60,155,2);
-INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (9,87,190,2);
+
 
 --Table: Circuit  //it requires the table country
 INSERT INTO Circuit(idCircuit,name,perimeter,idCountry) VALUES (1,'Monza',2000,1);
@@ -220,15 +218,15 @@ INSERT INTO Circuit(idCircuit,name,perimeter,idCountry) VALUES (17,'Suzuka',1200
 INSERT INTO Circuit(idCircuit,name,perimeter,idCountry) VALUES (18,'Paul Ricard',1200,5);
 
 --Table: Setup
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (1,320,1000,2000,0.8,23,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (2,360,1100,1000,0.67,25,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (3,320,800,3000,0.12,20,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (4,320,1000,2500,0.2,20,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (5,299,950,2000,0.64,21,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (6,310,950,2100,0.9,21,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (7,290,950,1900,0.86,26,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (8,270,950,3000,0.75,27,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (9,329,950,2000,0.12,22,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (1,320,1000,2000,1.23,23,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (2,360,1100,1000,1.25,25,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (3,320,800,3000,1.98,20,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (4,320,1000,2500,1.35,20,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (5,299,950,2000,1.54,21,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (6,310,950,2100,1.23,21,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (7,290,950,1900,1.28,26,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (8,270,950,3000,1.39,27,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (9,329,950,2000,1.40,22,100);
 
 --Table: CarCircuitSetup
 INSERT INTO CarCircuitSetup(idCar,idSetup,idCircuit) VALUES (1,6,1);
@@ -469,10 +467,10 @@ INSERT INTO Suspension(idComponent, rigidity, antiRollBar, height) VALUES(46,8,8
 
 --TRANSMISSION
 
-INSERT INTO Transmission(idCOmponent, differential, ratio) VALUES(25,70,80);
-INSERT INTO Transmission(idCOmponent, differential, ratio) VALUES(26,80,90);
-INSERT INTO Transmission(idCOmponent, differential, ratio) VALUES(59,70,80);
-INSERT INTO Transmission(idCOmponent, differential, ratio) VALUES(60,80,90);
+INSERT INTO Transmission(idComponent, differential, ratio) VALUES(25,70,80);
+INSERT INTO Transmission(idComponent, differential, ratio) VALUES(26,80,90);
+INSERT INTO Transmission(idComponent, differential, ratio) VALUES(59,70,80);
+INSERT INTO Transmission(idComponent, differential, ratio) VALUES(60,80,90);
 
 
 --WING
@@ -486,18 +484,18 @@ INSERT INTO Wing(idComponent, degrees) VALUES(56,8);
 INSERT INTO Wing(idComponent, degrees) VALUES(57,12);
 INSERT INTO Wing(idComponent, degrees) VALUES(58,13);
 
-insert into InfrastructureDepartmentStaff values (1,1,1)
-insert into InfrastructureDepartmentStaff values (2,2,2)
-insert into InfrastructureDepartmentStaff values (3,3,3)
-insert into InfrastructureDepartmentStaff values (4,4,4)
-insert into InfrastructureDepartmentStaff values (5,5,5)
-insert into InfrastructureDepartmentStaff values (6,6,6)
-insert into InfrastructureDepartmentStaff values (7,7,7)
-insert into InfrastructureDepartmentStaff values (8,8,8)
-insert into InfrastructureDepartmentStaff values (9,9,9)
-insert into InfrastructureDepartmentStaff values (10,10,10)
-insert into InfrastructureDepartmentStaff values (1,11,1)
-insert into InfrastructureDepartmentStaff values (2,12,2)
-insert into InfrastructureDepartmentStaff values (3,13,3)
-insert into InfrastructureDepartmentStaff values (4,14,4)
-insert into InfrastructureDepartmentStaff values (5,15,5)
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (1,1,1);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (2,2,2);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (3,3,3);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (4,4,4);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (5,5,5);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (6,6,6);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (7,7,7);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (8,8,8);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (9,9,9);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (10,10,10);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (1,11,1);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (2,12,2);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (3,13,3);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (4,14,4);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (5,15,5);

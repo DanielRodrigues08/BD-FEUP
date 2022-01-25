@@ -194,9 +194,8 @@ INSERT INTO Car(idCar,cost) VALUES (2,6500000);
 
 --Table: Pilot
 INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (13,70,170,1);
-INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (3,75,180,1);
-INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (5,60,155,2);
-INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (9,87,190,2);
+INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (3,75,180,2);
+
 
 --Table: Circuit  //it requires the table country
 INSERT INTO Circuit(idCircuit,name,perimeter,idCountry) VALUES (1,'Monza',2000,1);
@@ -219,15 +218,15 @@ INSERT INTO Circuit(idCircuit,name,perimeter,idCountry) VALUES (17,'Suzuka',1200
 INSERT INTO Circuit(idCircuit,name,perimeter,idCountry) VALUES (18,'Paul Ricard',1200,5);
 
 --Table: Setup
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (1,320,1000,2000,0.8,23,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (2,360,1100,1000,0.67,25,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (3,320,800,3000,0.12,20,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (4,320,1000,2500,0.2,20,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (5,299,950,2000,0.64,21,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (6,310,950,2100,0.9,21,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (7,290,950,1900,0.86,26,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (8,270,950,3000,0.75,27,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (9,329,950,2000,0.12,22,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (1,320,1000,2000,1.23,23,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (2,360,1100,1000,1.25,25,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (3,320,800,3000,1.98,20,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (4,320,1000,2500,1.35,20,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (5,299,950,2000,1.54,21,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (6,310,950,2100,1.23,21,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (7,290,950,1900,1.28,26,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (8,270,950,3000,1.39,27,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (9,329,950,2000,1.40,22,100);
 
 --Table: CarCircuitSetup
 INSERT INTO CarCircuitSetup(idCar,idSetup,idCircuit) VALUES (1,6,1);
