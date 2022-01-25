@@ -486,18 +486,18 @@ INSERT INTO Wing(idComponent, degrees) VALUES(56,8);
 INSERT INTO Wing(idComponent, degrees) VALUES(57,12);
 INSERT INTO Wing(idComponent, degrees) VALUES(58,13);
 
-insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (1,1,1)
-insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (2,2,2)
-insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (3,3,3)
-insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (4,4,4)
-insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (5,5,5)
-insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (6,6,6)
-insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (7,7,7)
-insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (8,8,8)
-insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (9,9,9)
-insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (10,10,10)
-insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (1,11,1)
-insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (2,12,2)
-insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (3,13,3)
-insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (4,14,4)
-insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (5,15,5)
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (1,1,1);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (2,2,2);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (3,3,3);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (4,4,4);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (5,5,5);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (6,6,6);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (7,7,7);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (8,8,8);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (9,9,9);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (10,10,10);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (1,11,1);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (2,12,2);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (3,13,3);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (4,14,4);
+insert into InfrastructureDepartmentStaff(idInfrastructure, idStaff, idDepartment) values (5,15,5);
