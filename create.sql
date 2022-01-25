@@ -164,7 +164,7 @@ CREATE TABLE Machine(
     CONSTRAINT Machine_PK PRIMARY KEY (idMachine)
 );
 
-DROP TABLE IF EXISTS StaffMachine
+DROP TABLE IF EXISTS StaffMachine;
 
 CREATE TABLE StaffMachine(
 	idMachine 			    INTEGER,
@@ -190,7 +190,7 @@ CREATE TABLE Piece(
     CONSTRAINT Piece_PK PRIMARY KEY (idPiece)
 );
 
-DROP Table IF EXISTS MachinePiece
+DROP Table IF EXISTS MachinePiece;
 
 CREATE TABLE MachinePiece(
 	idMachine				INTEGER,
