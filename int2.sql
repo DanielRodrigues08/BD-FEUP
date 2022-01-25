@@ -1,0 +1,4 @@
+SELECT Department.idDepartment, name
+FROM   Department, Staff, InfrastructureDepartmentStaff
+WHERE  Staff.idStaff = InfrastructureDepartmentStaff.idStaff 
+	   AND Department.idDepartment  = InfrastructureDepartmentStaff.idDepartment;
