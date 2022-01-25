@@ -148,7 +148,7 @@ INSERT INTO Infrastructure(idInfrastructure,address,type,area ) VALUES (9,'Rua d
 INSERT INTO Infrastructure(idInfrastructure,address,type,area ) VALUES (10,'Rua das Almirante Alfredo da Costa Coimbra','Pininfarina HQ',800);
 
 --Table: Machine
-INSERT INTO Machine(idMachine, function, condition, cost, nextMaintenanceDate, operationalRequirements) VALUES (1,'Fit tires', 'good', 100, 2022-12-20,'Nothing too specific');
+INSERT INTO Machine(idMachine, function, condition, cost, nextMaintenanceDate, operationalRequirements) VALUES (1,'Transmission Assembly', 'good', 100, 2022-12-20,'Nothing too specific');
 INSERT INTO Machine(idMachine, function, condition, cost, nextMaintenanceDate, operationalRequirements) VALUES (2,'Shoot bolts', 'bad', 100, 2022-12-20,'Nothing too specific');
 INSERT INTO Machine(idMachine, function, condition, cost, nextMaintenanceDate, operationalRequirements) VALUES (3,'Fit tires', 'good', 100, 2021-12-20,'Careful handling the pressure gates');
 INSERT INTO Machine(idMachine, function, condition, cost, nextMaintenanceDate, operationalRequirements) VALUES (4,'Fix rotors', 'good', 100, 2022-10-20,'Nothing too specific');
@@ -158,8 +158,34 @@ INSERT INTO Machine(idMachine, function, condition, cost, nextMaintenanceDate, o
 INSERT INTO Machine(idMachine, function, condition, cost, nextMaintenanceDate, operationalRequirements) VALUES (8,'Repair paintwork', 'good', 100, 2022-10-30,'Nothing too specific');
 INSERT INTO Machine(idMachine, function, condition, cost, nextMaintenanceDate, operationalRequirements) VALUES (9,'Make rotors', 'good', 100, 2022-11-18,'Nothing too specific');
 INSERT INTO Machine(idMachine, function, condition, cost, nextMaintenanceDate, operationalRequirements) VALUES (10,'Break Engines', 'good', 100, 2030-10-20,'At least break the engine for 500 miles');
-INSERT INTO Machine(idMachine, function, condition, cost, nextMaintenanceDate, operationalRequirements) VALUES (11,'Bore Engines', 'good', 100, 2025-12-21,'Nothing too specific');
+INSERT INTO Machine(idMachine, function, condition, cost, nextMaintenanceDate, operationalRequirements) VALUES (11,'Engine Assembly', 'good', 100, 2025-12-21,'Nothing too specific');
 
+
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (1, 3);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (2, 1);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (3, 5);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (4, 4);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (5, 8);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (6, 10);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (7, 9);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (8, 11);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (9, 6);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (10, 2);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (11, 7);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (12, 3);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (13, 6);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (14, 1);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (15, 4);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (10, 9);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (2, 2);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (4, 3);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (11, 6);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (10, 7);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (5, 1);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (12, 11);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (15, 6);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (14, 10);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (7, 5);
 --Table: Piece
 
 
@@ -249,6 +275,32 @@ INSERT INTO Piece(idPiece, type, condition, cost, quantity, manufacturingDate) V
 INSERT INTO Piece(idPiece, type, condition, cost, quantity, manufacturingDate) VALUES (15,'head gasket','good',58,1,2014-09-10);
 INSERT INTO Piece(idPiece, type, condition, cost, quantity, manufacturingDate) VALUES (16,'pedal','good',99,1,2005-12-12);
 INSERT INTO Piece(idPiece, type, condition, cost, quantity, manufacturingDate) VALUES (17,'split diff','good',10,1,2009-12-09);
+
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (10, 11);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (10, 12);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (10, 13);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (10, 16);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (9, 4);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (6, 1);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (6, 2);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (6, 3);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (8, 6);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (3, 1);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (7, 6);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (4, 4);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (4, 11);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (4, 12);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (4, 13);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (2, 1);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (1, 1);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (1, 8);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (1, 17);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (1, 10);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (11, 7);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (11, 4);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (11, 14);
+INSERT INTO MachinePiece(idMachine, idPiece) VALUES (5, 1);
+
 
 --Component
 insert into Component (idComponent, assemblyDate, idCar) values (1, '2021-07-16', 1);--BRAKE
