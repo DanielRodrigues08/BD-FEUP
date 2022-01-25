@@ -55,21 +55,21 @@ insert into Team (idTeam, name, foundationDate) values (1, 'Ferrari', '12/26/195
 
 insert into TeamCountry (idCountry, idTeam) values (6, 1);
 
-insert into Boss (idBoss, isBoss) values (1, false);
-insert into Boss (idBoss, isBoss) values (2, true);
-insert into Boss (idBoss, isBoss) values (3, true);
-insert into Boss (idBoss, isBoss) values (4, false);
-insert into Boss (idBoss, isBoss) values (5, false);
-insert into Boss (idBoss, isBoss) values (6, true);
-insert into Boss (idBoss, isBoss) values (7, false);
-insert into Boss (idBoss, isBoss) values (8, true);
-insert into Boss (idBoss, isBoss) values (9, false);
-insert into Boss (idBoss, isBoss) values (10, true);
-insert into Boss (idBoss, isBoss) values (11, false);
-insert into Boss (idBoss, isBoss) values (12, false);
-insert into Boss (idBoss, isBoss) values (13, true);
-insert into Boss (idBoss, isBoss) values (14, true);
-insert into Boss (idBoss, isBoss) values (15, false);
+insert into Boss (idBoss, isBoss) values (1, 0);
+insert into Boss (idBoss, isBoss) values (2, 1);
+insert into Boss (idBoss, isBoss) values (3, 1);
+insert into Boss (idBoss, isBoss) values (4, 0);
+insert into Boss (idBoss, isBoss) values (5, 0);
+insert into Boss (idBoss, isBoss) values (6, 1);
+insert into Boss (idBoss, isBoss) values (7, 0);
+insert into Boss (idBoss, isBoss) values (8, 1);
+insert into Boss (idBoss, isBoss) values (9, 0);
+insert into Boss (idBoss, isBoss) values (10, 1);
+insert into Boss (idBoss, isBoss) values (11, 0);
+insert into Boss (idBoss, isBoss) values (12, 0);
+insert into Boss (idBoss, isBoss) values (13, 1);
+insert into Boss (idBoss, isBoss) values (14, 1);
+insert into Boss (idBoss, isBoss) values (15, 0);
 
 insert into Financing (idFinancing, investedCapital) values (1, '85218936.87');
 insert into Financing (idFinancing, investedCapital) values (2, '16085287.13');
@@ -300,23 +300,23 @@ insert into Component (idComponent, assemblyDate, idCar) values (58, '2021-03-23
 insert into Component (idComponent, assemblyDate, idCar) values (59, '2021-03-07', 2);--TRANSMISSION
 insert into Component (idComponent, assemblyDate, idCar) values (60, '2021-11-20', NULL);--TRANSMISSION
 
-INSERT INTO ComponentPiece (idComponent, idPiece) values (1,42);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (2,41);
+INSERT INTO ComponentPiece (idComponent, idPiece) values (42,1);
+INSERT INTO ComponentPiece (idComponent, idPiece) values (41,2);
 INSERT INTO ComponentPiece (idComponent, idPiece) values (3,3);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (4,7);
+INSERT INTO ComponentPiece (idComponent, idPiece) values (7,4);
 INSERT INTO ComponentPiece (idComponent, idPiece) values (5,5);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (6,8);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (7,10);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (8,11);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (9,43);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (10,44);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (11,50);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (12,30);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (13,25);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (14,20);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (15,19);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (16,39);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (17,59);
+INSERT INTO ComponentPiece (idComponent, idPiece) values (8,6);
+INSERT INTO ComponentPiece (idComponent, idPiece) values (10,7);
+INSERT INTO ComponentPiece (idComponent, idPiece) values (11,8);
+INSERT INTO ComponentPiece (idComponent, idPiece) values (43,9);
+INSERT INTO ComponentPiece (idComponent, idPiece) values (44,10);
+INSERT INTO ComponentPiece (idComponent, idPiece) values (50,11);
+INSERT INTO ComponentPiece (idComponent, idPiece) values (30,12);
+INSERT INTO ComponentPiece (idComponent, idPiece) values (25,13);
+INSERT INTO ComponentPiece (idComponent, idPiece) values (20,14);
+INSERT INTO ComponentPiece (idComponent, idPiece) values (19,15);
+INSERT INTO ComponentPiece (idComponent, idPiece) values (39,16);
+INSERT INTO ComponentPiece (idComponent, idPiece) values (59,17);
 
 
 
