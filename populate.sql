@@ -194,12 +194,8 @@ INSERT INTO Car(idCar,cost) VALUES (2,6500000);
 
 --Table: Pilot
 INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (13,70,170,1);
-<<<<<<< HEAD
-INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (3,75,180,2);
-
-=======
 INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (9,87,190,2);
->>>>>>> c16cc476c365353b6586f244fa5d7108fec665cf
+
 
 --Table: Circuit  //it requires the table country
 INSERT INTO Circuit(idCircuit,name,perimeter,idCountry) VALUES (1,'Monza',2000,1);

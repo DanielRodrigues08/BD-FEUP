@@ -169,11 +169,11 @@ INSERT INTO StaffMachine(idStaff, idMachine) VALUES (5, 8);
 INSERT INTO StaffMachine(idStaff, idMachine) VALUES (6, 10);
 INSERT INTO StaffMachine(idStaff, idMachine) VALUES (7, 9);
 INSERT INTO StaffMachine(idStaff, idMachine) VALUES (8, 11);
-INSERT INTO StaffMachine(idStaff, idMachine) VALUES (9, 6);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (2, 6);
 INSERT INTO StaffMachine(idStaff, idMachine) VALUES (10, 2);
 INSERT INTO StaffMachine(idStaff, idMachine) VALUES (11, 7);
 INSERT INTO StaffMachine(idStaff, idMachine) VALUES (12, 3);
-INSERT INTO StaffMachine(idStaff, idMachine) VALUES (13, 6);
+INSERT INTO StaffMachine(idStaff, idMachine) VALUES (7, 6);
 INSERT INTO StaffMachine(idStaff, idMachine) VALUES (14, 1);
 INSERT INTO StaffMachine(idStaff, idMachine) VALUES (15, 4);
 INSERT INTO StaffMachine(idStaff, idMachine) VALUES (10, 9);
@@ -194,8 +194,12 @@ INSERT INTO Car(idCar,cost) VALUES (2,6500000);
 
 --Table: Pilot
 INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (13,70,170,1);
-INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (3,75,180,1);
+<<<<<<< HEAD
+INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (3,75,180,2);
 
+=======
+INSERT INTO Pilot(idStaff,weight,height,idCar) VALUES (9,87,190,2);
+>>>>>>> c16cc476c365353b6586f244fa5d7108fec665cf
 
 --Table: Circuit  //it requires the table country
 INSERT INTO Circuit(idCircuit,name,perimeter,idCountry) VALUES (1,'Monza',2000,1);
