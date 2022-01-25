@@ -1,4 +1,4 @@
-SELECT Department.idDepartment, Department.email, sum(salary)
+SELECT Department.idDepartment, count(salary)
 FROM   Department, Staff, InfrastructureDepartmentStaff
 WHERE  Staff.idStaff = InfrastructureDepartmentStaff.idStaff 
 	   AND Department.idDepartment  = InfrastructureDepartmentStaff.idDepartment
