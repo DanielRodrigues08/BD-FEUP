@@ -71,6 +71,18 @@ insert into Boss (idBoss, isBoss) values (13, 1);
 insert into Boss (idBoss, isBoss) values (14, 1);
 insert into Boss (idBoss, isBoss) values (15, 0);
 
+insert into Department(idDepartment, email, phone, budget) values (1, 'marketing@ferrari.pt' , 222111423, 150000);
+insert into Department(idDepartment, email, phone, budget) values (2, 'aero@ferrari.pt' , 222113333, 10023400);
+insert into Department(idDepartment, email, phone, budget) values (3, 'logistic@ferrari.pt' , 22345423, 89000);
+insert into Department(idDepartment, email, phone, budget) values (4, 'board@ferrari.pt' , 22216523, 90000);
+insert into Department(idDepartment, email, phone, budget) values (5, 'museum@ferrari.pt' , 222111423, 100000);
+insert into Department(idDepartment, email, phone, budget) values (6, 'informatics@ferrari.pt' , 2345111423, 700000);
+insert into Department(idDepartment, email, phone, budget) values (7, 'chassi@ferrari.pt' , 226257323, 5000000);
+insert into Department(idDepartment, email, phone, budget) values (8, 'motor@ferrari.pt' , 225454423, 10000000);
+insert into Department(idDepartment, email, phone, budget) values (9, 'integration@ferrari.pt' , 221211423, 167000);
+insert into Department(idDepartment, email, phone, budget) values (10, 'hr@ferrari.pt' , 2225149433, 10000);
+
+
 insert into Financing (idFinancing, investedCapital) values (1, '85218936.87');
 insert into Financing (idFinancing, investedCapital) values (2, '16085287.13');
 insert into Financing (idFinancing, investedCapital) values (3, '10964540.81');
@@ -182,15 +194,15 @@ INSERT INTO Circuit(idCircuit,name,perimeter,idCountry) VALUES (18,'Suzuka',1200
 INSERT INTO Circuit(idCircuit,name,perimeter,idCountry) VALUES (19,'Paul Ricard',1200,5);
 
 --Table: Setup
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (1,320,1000,2000,1,23,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (2,360,1100,1000,1,25,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (3,320,800,3000,1,20,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (4,320,1000,2500,1,20,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (5,299,950,2000,1,21,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (6,310,950,2100,1,21,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (7,290,950,1900,1,26,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (8,270,950,3000,1,27,100);
-INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (9,329,950,2000,1,22,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (1,320,1000,2000,0.8,23,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (2,360,1100,1000,0.67,25,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (3,320,800,3000,0.12,20,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (4,320,1000,2500,0.2,20,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (5,299,950,2000,0.64,21,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (6,310,950,2100,0.9,21,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (7,290,950,1900,0.86,26,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (8,270,950,3000,0.75,27,100);
+INSERT INTO Setup(idSetup,vMax,horsepower,downforce,pace,tirePressure,fuel) VALUES (9,329,950,2000,0.12,22,100);
 
 --Table: CarCircuitSetup
 INSERT INTO CarCircuitSetup(idCar,idSetup,idCircuit) VALUES (1,6,1);
