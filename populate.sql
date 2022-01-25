@@ -75,7 +75,7 @@ insert into Department(idDepartment, email, phone, budget) values (1, 'marketing
 insert into Department(idDepartment, email, phone, budget) values (2, 'aero@ferrari.pt' , 222113333, 10023400);
 insert into Department(idDepartment, email, phone, budget) values (3, 'logistic@ferrari.pt' , 22345423, 89000);
 insert into Department(idDepartment, email, phone, budget) values (4, 'board@ferrari.pt' , 22216523, 90000);
-insert into Department(idDepartment, email, phone, budget) values (5, 'museum@ferrari.pt' , 222111423, 100000);
+insert into Department(idDepartment, email, phone, budget) values (5, 'museum@ferrari.pt' , 222111429, 100000);
 insert into Department(idDepartment, email, phone, budget) values (6, 'informatics@ferrari.pt' , 2345111423, 700000);
 insert into Department(idDepartment, email, phone, budget) values (7, 'chassi@ferrari.pt' , 226257323, 5000000);
 insert into Department(idDepartment, email, phone, budget) values (8, 'motor@ferrari.pt' , 225454423, 10000000);
