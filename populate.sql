@@ -186,7 +186,6 @@ INSERT INTO StaffMachine(idStaff, idMachine) VALUES (12, 11);
 INSERT INTO StaffMachine(idStaff, idMachine) VALUES (15, 6);
 INSERT INTO StaffMachine(idStaff, idMachine) VALUES (14, 10);
 INSERT INTO StaffMachine(idStaff, idMachine) VALUES (7, 5);
---Table: Piece
 
 
 --Table: Car
@@ -459,10 +458,10 @@ INSERT INTO Suspension(idComponent, rigidity, antiRollBar, height) VALUES(46,8,8
 
 --TRANSMISSION
 
-INSERT INTO Transmission(idCOmponent, differential, ratio) VALUES(25,70,80);
-INSERT INTO Transmission(idCOmponent, differential, ratio) VALUES(26,80,90);
-INSERT INTO Transmission(idCOmponent, differential, ratio) VALUES(59,70,80);
-INSERT INTO Transmission(idCOmponent, differential, ratio) VALUES(60,80,90);
+INSERT INTO Transmission(idComponent, differential, ratio) VALUES(25,70,80);
+INSERT INTO Transmission(idComponent, differential, ratio) VALUES(26,80,90);
+INSERT INTO Transmission(idComponent, differential, ratio) VALUES(59,70,80);
+INSERT INTO Transmission(idComponent, differential, ratio) VALUES(60,80,90);
 
 
 --WING
