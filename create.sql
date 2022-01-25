@@ -164,11 +164,21 @@ CREATE TABLE Machine(
     CONSTRAINT Machine_PK PRIMARY KEY (idMachine)
 );
 
+DROP TABLE IF EXISTS StaffMachine
+
+CREATE TABLE StaffMachine(
+	idMachine 			    INTEGER,
+	idStaff					INTEGER,
+	CONSTRAINT Machine_FK FOREIGN KEY (idStaff) REFERENCES Staff(idStaff) ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT Staff_FK FOREIGN KEY (idMachine) REFERENCES Machine(idMachine) ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT StaffMachine_PK PRIMARY KEY (idStaff, idMachine)	
+);
+
 -- Table: Piece
 DROP TABLE IF EXISTS Piece;
 
 CREATE TABLE Piece(
-    idPiece                 INTEGER ,
+    idPiece                 INTEGER,
     type                    TEXT    CONSTRAINT nn_piece_function NOT NULL,
     condition               TEXT   CONSTRAINT nn_piece_condition NOT NULL,
     cost                    INTEGER CONSTRAINT nn_piece_cost NOT NULL,
@@ -178,6 +188,16 @@ CREATE TABLE Piece(
 
     CONSTRAINT check_piece_quantity CHECK( quantity>0),
     CONSTRAINT Piece_PK PRIMARY KEY (idPiece)
+);
+
+DROP Table IF EXISTS MachinePiece
+
+CREATE TABLE MachinePiece(
+	idMachine				INTEGER,
+	idPiece					INTEGER,
+	CONSTRAINT Machine_FK FOREIGN KEY (idPiece) REFERENCES Piece(idPiece) ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT Piece_FK FOREIGN KEY (idMachine) REFERENCES Machine(idMachine) ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT MachinePiece_PK PRIMARY KEY (idMachine, idPiece)	
 );
 
 
