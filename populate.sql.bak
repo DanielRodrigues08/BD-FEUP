@@ -401,8 +401,6 @@ INSERT INTO ComponentPiece (idComponent, idPiece) values (42,20);
 INSERT INTO ComponentPiece (idComponent, idPiece) values (42,21);
 INSERT INTO ComponentPiece (idComponent, idPiece) values (44,10);
 INSERT INTO ComponentPiece (idComponent, idPiece) values (50,11);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (50,24);
-INSERT INTO ComponentPiece (idComponent, idPiece) values (50,25);
 INSERT INTO ComponentPiece (idComponent, idPiece) values (30,12);
 INSERT INTO ComponentPiece (idComponent, idPiece) values (25,13);
 INSERT INTO ComponentPiece (idComponent, idPiece) values (20,14);
