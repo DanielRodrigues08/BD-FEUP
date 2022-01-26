@@ -1,0 +1,7 @@
+CREATE TRIGGER deleteRelationDSI
+AFTER DELETE ON Department
+FOR EACH ROW
+BEGIN
+	DELETE FROM 
+	WHERE departmentID = OLD.departmentID;
+END;
