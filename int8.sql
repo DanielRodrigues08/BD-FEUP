@@ -1,1 +1,4 @@
+.mode columns
+.headers on
+.nullvalue NULL
 select idTransmission, Piece, Machine, name from (select idTransmission, Piece, K.idMachine as Machine, idStaff from (select idTransmission, MachinePiece.idPiece as Piece, idMachine from( select Transmission.idComponent as idTransmission, idPiece from Transmission left join ComponentPiece on Transmission.idComponent = ComponentPiece.idComponent where Transmission.idComponent=25) as V left join MachinePiece on V.idPiece = MachinePiece.idPiece) as K left join StaffMachine on StaffMachine.idMachine=K.idMachine) as Y left join Staff on Y.idStaff= Staff.idStaff;
