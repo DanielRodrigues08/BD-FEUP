@@ -2,9 +2,7 @@
 .headers on
 .nullvalue NULL
 
-
-
-SELECT Staff.name as PilotName, ComponentID, max(NumberPiece) as NumberPieceBroken,CarID  
+SELECT Staff.name as PilotName, ComponentID, NumberPiece as NumberPieceBroken,CarID  
 FROM
 (
 	SELECT  Component.idComponent as ComponentID, Component.idCar as CarID, count(*) as NumberPiece
@@ -17,6 +15,16 @@ FROM
 	)
 	GROUP BY Component.idComponent
 ), Pilot, Staff
-WHERE Pilot.idCar = CarID AND Pilot.idStaff = Staff.idStaff
-GROUP BY CarID
-;
+WHERE Pilot.idCar = CarID AND Pilot.idStaff = Staff.idStaff AND NumberPiece = ( SELECT max(NumberPiece) as MaxNumberPiece
+FROM
+(
+	SELECT  Component.idComponent as ComponentID, Component.idCar as CarID, count(*) as NumberPiece
+	FROM ComponentPiece, Component
+	WHERE ComponentPiece.idComponent = Component.idComponent AND ComponentPiece.idPiece in
+		(
+		SELECT idPiece
+		FROM Piece
+		WHERE Piece.condition = 'bad'
+	)
+	GROUP BY Component.idComponent
+), Pilot, Staff );
