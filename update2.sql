@@ -1,8 +1,8 @@
-Create Trigger U2
-After Update Of idStaff on Staff
+Create Trigger U3
+After Update of idStaff on Staff
 For Each Row
 Begin
-Update Apply
-Set idStaff = New.idStaff
-Where idStaff = Old.idStaff;
+Update InfrastructureDepartmentStaff
+	Set idStaff = New.idStaff
+	Where idStaff = Old.idStaff;
 End;
