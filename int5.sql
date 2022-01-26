@@ -1,3 +1,6 @@
+.mode columns
+.headers on
+.nullvalue NULL
 SELECT name, max(avgPace)
 FROM(
 SELECT idStaff, round(avg(pace),3) as avgPace

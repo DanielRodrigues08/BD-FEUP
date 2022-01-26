@@ -1,3 +1,6 @@
+.mode columns
+.headers on
+.nullvalue NULL
 select Wing.idComponent as WingNr, assemblyDate
 from Wing
 left join
